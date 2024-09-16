@@ -1,0 +1,111 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #aa853d; /* Dark background color */
+    color: white; /* Text color */
+    position: relative; /* Ensure position context for the menu */
+}
+
+.navbar-logo {
+    height: 40px; /* Adjust logo size */
+}
+
+.company-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px; /* Space between links */
+    margin: 0;
+}
+
+ul li {
+    margin: 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+ul li a:hover {
+    background-color: #555; /* Darker background on hover */
+    color: #f0f0f0; /* Light text color on hover */
+}
+
+/* Hamburger Menu Icon */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+/* Mobile Menu */
+.nav-menu {
+    display: flex;
+}
+
+@media (max-width: 760px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50vw; /* Take up half of the viewport width */
+        background-color: #aa853d; /* Same as navbar background */
+        z-index: 1;
+        flex-direction: column;
+        padding-top: 60px; /* Adjust according to your navbar height */
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+    }
+
+    .nav-menu.show-menu {
+        display: flex;
+        transform: translateX(0); /* Slide in the menu */
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu li a {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        color: white;
+        text-decoration: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-menu li a:hover {
+        background-color: #555;
+        color: #f0f0f0;
+    }
+}
