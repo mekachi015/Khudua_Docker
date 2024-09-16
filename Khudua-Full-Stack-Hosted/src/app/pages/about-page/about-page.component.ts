@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AboutPageComponent {
 
+  selectedComponent: string | null = null;
+
+  displayKhudua(component: string) {
+    this.selectedComponent = component;
+  }
 }
